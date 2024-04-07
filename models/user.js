@@ -34,7 +34,7 @@ class User {
     );
 
     if (!user.rows.length) {
-      throw new ExpressError(`User "${username}" doesn't exist.`, 404);
+      throw new ExpressError(`User "${username}" doesn't exist.`, 400);
     }
 
     return await bcrypt.compare(password, user.rows[0].password)
@@ -83,7 +83,7 @@ class User {
     );
 
     if (!user.rows.length) {
-      throw new ExpressError(`Username "${username}" doesn't exist.`, 404);
+      throw new ExpressError(`Username '${username}' doesn't exist.`, 404);
     }
 
     return user.rows[0];

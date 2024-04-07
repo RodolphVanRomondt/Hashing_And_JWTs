@@ -30,7 +30,7 @@ app.get("/", (req, res, next) => {
 
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-// app.use("/messages", messageRoutes);
+app.use("/messages", messageRoutes);
 
 /** 404 handler */
 app.use(function(req, res, next) {
